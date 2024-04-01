@@ -27,8 +27,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-weight: bold;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.4em;
+  font-weight: lighter;
+  color: #ffffff;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .start-screen {
@@ -37,7 +39,19 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #F6A045;
 }
+
+.s-item {
+  background-color: #0a0a09;
+  padding: .5em;
+  color: #F6A045;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 10%;
+}
+
 
 .hide {
   display: none;
