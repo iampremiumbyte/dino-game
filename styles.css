@@ -21,6 +21,7 @@ body {
 
 .score-wrap {
   position: absolute;
+  top: 10%;
   font-size: 2.5vmin;
   width: 100%;
   padding: 0 1em;
@@ -78,4 +79,15 @@ body {
   left: calc(var(--left) * 1%);
   height: 30%;
   bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .score-wrap {
+    font-size: 4vmin;
+  }
+
+  .s-item {
+    width: 30%;
+  }
+
 }

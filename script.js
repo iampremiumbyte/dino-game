@@ -48,11 +48,20 @@ function checkLose() {
   return getCactusRects().some(rect => isCollision(rect, dinoRect))
 }
 
+// function isCollision(rect1, rect2) {
+//   return (
+//     (rect1.left + 50) < rect2.right &&
+//     (rect1.top + 50) < rect2.bottom &&
+//     (rect1.right - 50) > rect2.left &&
+//     rect1.bottom > rect2.top
+//   )
+// }
+
 function isCollision(rect1, rect2) {
   return (
-    (rect1.left + 50) < rect2.right &&
-    (rect1.top + 50) < rect2.bottom &&
-    (rect1.right - 50) > rect2.left &&
+    (rect1.left + (0.3 * rect1.left)) < rect2.right &&
+    (rect1.top + (0.07 * rect1.top)) < rect2.bottom &&
+    (rect1.right - (0.4 * rect1.right)) > rect2.left &&
     rect1.bottom > rect2.top
   )
 }
