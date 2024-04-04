@@ -12,11 +12,13 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #000;
 }
 
 .world {
   overflow: hidden;
   position: relative;
+  background-color: #fff;
 }
 
 .score-wrap {
@@ -32,6 +34,7 @@ body {
   font-weight: lighter;
   color: #ffffff;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  z-index: 10000;
 }
 
 .start-screen {
@@ -40,7 +43,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #F6A045;
+  color: rgb(4, 245, 205);
+  text-shadow: 2px 2px 5px cadetblue;
+  z-index: 10000;
 }
 
 .s-item {
@@ -58,27 +63,40 @@ body {
   display: none;
 }
 
+.background {
+  width: 100%;
+  height: 100%;
+}
+
 .ground {
   --left: 0;
   position: absolute;
-  width: 300%;
-  bottom: 0;
-  left: calc(var(--left) * 1%)
+  width: 100%;
+  height: 100%;
+  left: calc(var(--left) * 1%);
 }
 
 .dino {
   --bottom: 0;
   position: absolute;
   left: 1%;
-  height: 40%;
+  height: 45%;
   bottom: calc(var(--bottom) * 1%);
 }
 
 .cactus {
   position: absolute;
   left: calc(var(--left) * 1%);
-  height: 30%;
+  height: 35%;
   bottom: 0;
+}
+
+
+.flying-cactus {
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 45%;
+  bottom: 55%;
 }
 
 @media screen and (max-width: 768px) {

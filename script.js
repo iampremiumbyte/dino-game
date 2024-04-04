@@ -9,7 +9,7 @@ const startScreenElem = document.querySelector("[data-start-screen]")
 
 
 const WORLD_WIDTH = 100
-const WORLD_HEIGHT = 30
+const WORLD_HEIGHT = 40
 const SPEED_SCALE_INCREASE = 0.00001
 
 let lastTime
@@ -32,7 +32,7 @@ function update(time) {
   }
   const delta = time - lastTime
 
-  updateGround(delta, speedScale)
+  updateGround(delta, speedScale, score);
   updateDino(delta, speedScale)
   updateCactus(delta, speedScale)
   updateSpeedScale(delta)
@@ -59,9 +59,9 @@ function checkLose() {
 
 function isCollision(rect1, rect2) {
   return (
-    (rect1.left + (0.3 * rect1.left)) < rect2.right &&
-    (rect1.top + (0.07 * rect1.top)) < rect2.bottom &&
-    (rect1.right - (0.4 * rect1.right)) > rect2.left &&
+    (rect1.left + (0.5 * rect1.left)) < rect2.right &&
+    (rect1.top + (0.4 * rect1.top)) < rect2.bottom &&
+    (rect1.right - (0.9 * rect1.right)) > rect2.left &&
     rect1.bottom > rect2.top
   )
 }
@@ -88,6 +88,7 @@ function handleStart() {
 
 function handleLose() {
   setDinoLose();
+  let hiscore = window.localStorage.getItem("hiscore") || 0;
   if (score > hiscore) {
     window.localStorage?.setItem("hiscore", Math.floor(score));
     hiScoreElem.innerText = Math.floor(score);
